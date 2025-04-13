@@ -7,7 +7,7 @@
 .main{
     width: 100%;
     height: 100vh;
-    background-image: url(./bg\ color\ 1.jpg);
+    background-image: url(./Extras/bg\ color\ 1.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -71,6 +71,7 @@ li a:hover{
     width: 650px;
     border-radius: 0 15px 0 15px;
     height: 85vh;
+    border-style: none;
 }
 
 .card{
@@ -79,6 +80,7 @@ li a:hover{
     background-color: #de3023a4;
     height: 85vh;
     overflow-y: hidden;
+    border-style: none;
 }
 
 .card img{
@@ -87,6 +89,7 @@ li a:hover{
     object-fit:cover;
     position: absolute;
     border-radius: 0 15px 0 15px;
+    border-style: none;
 }
 
 .card-content img{
@@ -113,14 +116,16 @@ li a:hover{
     background-color: azure;
 }
 
+.card-content2{
+    padding: 15px;
+}
+
 .card-content2 h1{
-    padding: 5px;
     color:#f24242;
     margin-left: .2rem;
 }
 
 .card-content2 p{
-    padding: 12px;
     color:#f24242;
 }
 
@@ -141,13 +146,15 @@ li a:hover{
     background-color: #c02221;
 }
 
+.card-content3{
+    padding: 15px;
+}
+
 .card-content3 h1{
-    padding: 5px;
     color:azure
 }
 
 .card-content3 p{
-    padding: 10px;
     color: azure;
 }
 

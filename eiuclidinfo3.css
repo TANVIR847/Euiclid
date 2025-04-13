@@ -15,7 +15,7 @@
 .main{
     width: 100%;
     height: 100vh;
-    background-image: url(./kiwi\ 2.0.png);
+    background-image: url(./Extras/kiwi\ 2.0.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -121,14 +121,17 @@ li a:hover{
     background-color: azure;
 }
 
+.card-content2{
+    padding: 15px;
+}
+
 .card-content2 h1{
-    padding: 5px;
     color:#b3d300;
     margin-left: .2rem;
+    font-weight: 300px;
 }
 
 .card-content2 p{
-    padding: 12px;
     color:#b3d300;
 }
 
@@ -149,13 +152,15 @@ li a:hover{
     background-color: #7fad01;
 }
 
+.card-content3{
+    padding: 15px;
+}
+
 .card-content3 h1{
-    padding: 5px;
     color:azure
 }
 
 .card-content3 p{
-    padding: 10px;
     color: azure;
 }
 
