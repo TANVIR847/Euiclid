@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="age-message">Hello world</h1>
+    <form action="">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div style="margin: 12px;">
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob">
+        </div>
+    </form>
+    <button>Calculate my age</button>
+    
+    <script>
+        // Get the button and input elements
+        const button = document.querySelector('button');
+        const nameInput = document.getElementById('name');
+        const dobInput = document.getElementById('dob');
+        const ageMessage = document.getElementById('age-message');
+    
+        // Add click event listener to the button
+        button.addEventListener('click', function () {
+            const name = nameInput.value;
+            const dobValue = dobInput.value;
+    
+            if (!dobValue) {
+                alert("Please enter your date of birth.");
+                return;
+            }
+
+            // Calculate age
+            const dob = new Date(dobValue);
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const monthDiff = today.getMonth() - dob.getMonth();
+            const dayDiff = today.getDate() - dob.getDate();
+
+            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                age--;
+            }
+
+            // Display the result in the <h1> element
+            ageMessage.textContent = `Your Name is: ${name}, Age: ${age}`;
+        });
+    </script>
+</body>
+</html>

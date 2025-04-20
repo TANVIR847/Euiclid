@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    label, select, input {
+      margin: 8px 0;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h2>Unit Converter (Weight)</h2>
+
+  <label for="value">Enter value:</label>
+  <input type="number" id="value" placeholder="e.g. 100">
+
+  <label for="from">From:</label>
+  <select id="from">
+    <option value="kg">Kilogram (kg)</option>
+    <option value="g">Gram (g)</option>
+    <option value="lbs">Pound (lbs)</option>
+    <option value="oz">Ounce (oz)</option>
+  </select>
+
+  <label for="to">To:</label>
+  <select id="to">
+    <option value="kg">Kilogram (kg)</option>
+    <option value="g">Gram (g)</option>
+    <option value="lbs">Pound (lbs)</option>
+    <option value="oz">Ounce (oz)</option>
+  </select>
+
+  <button onclick="convert()">Convert</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    function convert() {
+      const value = parseFloat(document.getElementById("value").value);
+      const from = document.getElementById("from").value;
+      const to = document.getElementById("to").value;
+      const resultEl = document.getElementById("result");
+
+      if (isNaN(value)) {
+        resultEl.textContent = "Please enter a valid number.";
+        return;
+      }
+
+      // Convert everything to kilograms first
+      let valueInKg;
+
+      switch (from) {
+        case "kg": valueInKg = value; break;
+        case "g": valueInKg = value / 1000; break;
+        case "lbs": valueInKg = value * 0.453592; break;
+        case "oz": valueInKg = value * 0.0283495; break;
+        default: valueInKg = value;
+      }
+
+      // Convert from kg to target unit
+      let convertedValue;
+      switch (to) {
+        case "kg": convertedValue = valueInKg; break;
+        case "g": convertedValue = valueInKg * 1000; break;
+        case "lbs": convertedValue = valueInKg / 0.453592; break;
+        case "oz": convertedValue = valueInKg / 0.0283495; break;
+        default: convertedValue = valueInKg;
+      }
+
+      resultEl.textContent = `${value} ${from} = ${convertedValue} ${to}`;
+    }
+  </script>
+</body>
+</html>
